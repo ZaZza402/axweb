@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Page Title | AxiomWeb</title>
-    <meta name="description" content="A summary of this specific page's content.">
+    <!-- Page Title and Description -->
+    <title>Portfolio | AxiomWeb</title>
+    <meta name="description" content="Esplora una selezione dei nostri migliori lavori. Scopri come abbiamo aiutato aziende locali a trasformare la loro presenza online con soluzioni strategiche e di design.">
 
+    <!-- Stylesheets, Fonts, Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon Links -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QN6GNKDE5C"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -27,92 +34,163 @@
 </head>
 <body>
 
+    <!-- Reusable Navigation, Overlay, and Header -->
     <nav class="off-canvas-menu">
-        <button class="menu-close" aria-label="Close navigation menu"><i class='bx bx-x'></i></button>
-        <a href="/index.html#contact" class="btn btn-primary menu-cta">GET A FREE PROPOSAL</a>
+        <button class="menu-close" aria-label="Chiudi menu di navigazione"><i class='bx bx-x'></i></button>
+        <a href="#cta" class="btn btn-primary menu-cta">Richiedi una Proposta</a>
         <ul class="nav-links">
             <li><a href="/index.html" class="nav-link">Home</a></li>
-            <li><a href="/index.html#services" class="nav-link">Services</a></li>
-            <li><a href="/index.html#showcase" class="nav-link">Showcase</a></li>
+            <li><a href="/services.html" class="nav-link">Servizi</a></li>
+            <li><a href="/showcase.html" class="nav-link">Portfolio</a></li>
             <li class="has-submenu">
-                <a href="#" class="nav-link">Insights <i class='bx bxs-chevron-down'></i></a>
+                <a href="#" class="nav-link">Approfondimenti <i class='bx bxs-chevron-down'></i></a>
                 <ul class="submenu">
-                    <li><a href="/ai-guides.html">AI Guides</a></li> <li><a href="/case-studies.html">Case Studies</a></li> </ul>
+                    <li><a href="#">Guide AI</a></li>
+                    <li><a href="#">Casi di Successo</a></li>
+                </ul>
             </li>
-            <li><a href="/index.html#contact" class="nav-link">Contact</a></li>
+            <li><a href="/index.html#contact" class="nav-link">Contatti</a></li>
         </ul>
         <div class="menu-logo-placeholder">
-            <img src="images/aw_logo.webp" alt="AxiomWeb Logo">
+            <img src="images/aw_logo.webp" alt="Logo AxiomWeb">
         </div>
     </nav>
     <div class="overlay"></div>
     <header class="main-header">
         <div class="logo">AxiomWeb</div>
-        <button class="menu-toggle" aria-label="Open navigation menu">
+        <button class="menu-toggle" aria-label="Apri menu di navigazione">
             <div class="hamburger"><span></span><span></span><span></span></div>
         </button>
     </header>
 
+    <!-- Main Content Area -->
     <main id="main-content">
 
+        <!-- Page Header -->
         <header class="page-header">
             <div class="container">
-                <h1>Your Awesome Page Title Goes Here</h1>
-                <p class="page-subtitle">A brief, engaging summary of the article.</p>
+                <h1>I Nostri Lavori</h1>
+                <p class="page-subtitle">Una selezione di progetti che dimostrano il nostro approccio strategico e la nostra passione per il design. Ogni sito è una soluzione, non solo un'estetica.</p>
             </div>
         </header>
 
-        <section class="article-section">
-            <div class="container article-container">
-                
-                <h2>This is a Subheading</h2>
-                <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                
-                <img src="https://via.placeholder.com/800x400" alt="Descriptive alt text for the image" class="content-image">
-                
-                <p>Another paragraph to continue your point. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <!-- Portfolio Section with Filters -->
+        <section class="portfolio-section">
+            <div class="container">
+                <!-- Filter Buttons -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Tutti</button>
+                    <button class="filter-btn" data-filter="ristorazione">Ristorazione</button>
+                    <button class="filter-btn" data-filter="benessere">Benessere</button>
+                    <button class="filter-btn" data-filter="artigianato">Artigianato</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="servizi">Servizi</button>
+                </div>
 
-                <blockquote>
-                    "This is a blockquote. It's perfect for highlighting a key takeaway or a powerful quote from a source. It will stand out visually from the rest of the text."
-                </blockquote>
-
-                <h2>Another Subheading for Organization</h2>
-                <p>Continue with your content, explaining concepts, telling a story for a case study, or providing steps for a guide.</p>
-
+                <!-- UPDATED: Portfolio Grid with new data attributes -->
+                <div class="portfolio-grid">
+                    <!-- Project 1 -->
+                    <div class="portfolio-card" data-category="servizi" data-full-image="images/service-pulizia.png">
+                        <img src="images/pulizia-small.jpg" alt="Progetto per Clean Service Srl">
+                        <div class="card-overlay">
+                            <h3>Clean Service Srl</h3>
+                            <p>Servizi Professionali</p>
+                            <span class="view-case-study">Visualizza Progetto</span>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="portfolio-card" data-category="benessere" data-full-image="images/barbiere.png">
+                        <img src="images/barbiere-small.jpg" alt="Progetto per La Barberia Stilosa">
+                        <div class="card-overlay">
+                            <h3>La Barberia Stilosa</h3>
+                            <p>Benessere e Cura della Persona</p>
+                            <span class="view-case-study">Visualizza Progetto</span>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="portfolio-card" data-category="artigianato" data-full-image="images/legno-passione.png">
+                        <img src="images/legno-small.jpg" alt="Progetto per Legno & Passione">
+                        <div class="card-overlay">
+                            <h3>Legno & Passione</h3>
+                            <p>Artigianato</p>
+                            <span class="view-case-study">Visualizza Progetto</span>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="portfolio-card" data-category="benessere" data-full-image="images/palestra.png">
+                        <img src="images/palestra-small.jpg" alt="Progetto per Palestra PowerFit">
+                        <div class="card-overlay">
+                            <h3>Palestra PowerFit</h3>
+                            <p>Benessere e Fitness</p>
+                            <span class="view-case-study">Visualizza Progetto</span>
+                        </div>
+                    </div>
+                    <!-- Project 5 -->
+                    <div class="portfolio-card" data-category="ristorazione" data-full-image="images/ristorante.png">
+                        <img src="images/ristorante-small.jpg" alt="Progetto per Ristorante La Brace">
+                        <div class="card-overlay">
+                            <h3>Ristorante La Brace</h3>
+                            <p>Ristorazione</p>
+                            <span class="view-case-study">Visualizza Progetto</span>
+                        </div>
+                    </div>
+                    <!-- Project 6 -->
+                    <div class="portfolio-card" data-category="design" data-full-image="images/design-interni.png">
+                        <img src="images/studiodesign-small.jpg" alt="Progetto per Studio Design Interni">
+                        <div class="card-overlay">
+                            <h3>Studio Design Interni</h3>
+                            <p>Design e Arredamento</p>
+                            <span class="view-case-study">Visualizza Progetto</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="cta-section">
+        <!-- Final CTA Section -->
+        <section id="cta" class="cta-section">
             <div class="container">
-                <h2>Ready to Start Your Project?</h2>
-                <p class="section-intro">See how our services can transform your business's online presence.</p>
-                <a href="/index.html#services" class="btn btn-primary">View Our Services</a>
+                <h2>Il Tuo Progetto Potrebbe Essere il Prossimo</h2>
+                <p class="section-intro">Sei pronto a trasformare la tua idea in un caso di successo? Parliamone insieme.</p>
+                <a href="/index.html#contact" class="btn btn-primary">Richiedi la Tua Proposta Gratuita</a>
             </div>
         </section>
 
     </main>
+
+    <!-- Reusable Footer -->
     <footer class="main-footer">
         <div class="container">
-            <p class="footer-quote"><em>"Design is not just what it looks like and feels like. Design is how it works."</em></p>
+            <p class="footer-quote"><em>"Il design non è solo come appare e come si sente. Il design è come funziona."</em></p>
             <div class="footer-links">
-                <h4>Quick Links</h4>
+                <h4>Link Veloci</h4>
                 <ul>
                     <li><a href="/index.html">Home</a></li>
-                    <li><a href="/index.html#services">Services</a></li>
-                    <li><a href="/index.html#contact">Contact</a></li>
+                    <li><a href="/services.html">Servizi</a></li>
+                    <li><a href="/index.html#contact">Contatti</a></li>
                 </ul>
             </div>
             <div class="footer-social">
-                <a href="#" aria-label="Visit our Facebook page"><i class='bx bxl-facebook-square'></i></a>
-                <a href="#" aria-label="Visit our LinkedIn profile"><i class='bx bxl-linkedin-square'></i></a>
-                <a href="#" aria-label="Visit our Instagram page"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://www.facebook.com/AxiomWeb/" aria-label="Visita la nostra pagina Facebook" target="_blank"><i class='bx bxl-facebook-square'></i></a>
+                <a href="#" aria-label="Visita il nostro profilo LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="#" aria-label="Visita la nostra pagina Instagram"><i class='bx bxl-instagram-alt'></i></a>
             </div>
             <div class="footer-copyright"></div>
         </div>
     </footer>
-    <a href="#" class="fab" aria-label="Chat on WhatsApp"><i class='bx bxl-whatsapp'></i></a>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    
+    <a href="https://wa.me/391234567890" class="fab" aria-label="Chatta su WhatsApp" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+    
+    <!-- NEW: Lightbox structure -->
+    <div class="lightbox" id="portfolio-lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Chiudi visualizzazione immagine">&times;</button>
+            <img src="" alt="Progetto a schermo intero">
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js" defer></script>
-
 </body>
 </html>

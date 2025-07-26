@@ -1,6 +1,4 @@
 /* --- CSS Variables and Initial Setup --- */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap');
-
 :root {
     --bg-primary: #1A1D24;
     --bg-card: #252934;
@@ -276,54 +274,80 @@ section {
 }
 
 
-/* --- Hero Section --- */
+/* --- Hero Section (Homepage) --- */
 .hero {
     height: 100vh;
-    display: flex;
+    display: flex; 
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 1.5rem;
     position: relative;
-    background-color: #23153c; /* Fallback color from Vanta config */
+    background-color: #1A1D24; 
+    padding: 0 1.5rem;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 0;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 550px;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding-top: 80px; 
+    padding-bottom: 20px;
 }
 
 .hero-content h1 {
     font-size: 2.5rem;
     letter-spacing: 2px;
 }
+
 .typed-text {
     background: var(--accent-blue-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.hero-subheadline {
-    font-size: 1.1rem;
-    max-width: 550px;
-    margin: 1.5rem auto 2.5rem;
-    color: #e7ecf0;
-}
-/* --- NEW: Hero Overlay for Text Readability --- */
-.hero::before {
-    content: ''; /* Required for pseudo-elements */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* The overlay color and transparency. Adjust the last value (0.5) to make it darker or lighter. */
-    background-color: rgba(0, 0, 0, 0.5); 
-    
-    z-index: 0; /* This places the overlay above the Vanta background but below your text content. */
+
+.glass-panel {
+    background: rgba(26, 29, 36, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Services Section --- */
+.hero-subheadline {
+    font-size: 1.1rem;
+    color: rgba(240, 240, 240, 0.9);
+    margin: 0;
+}
+
+.hero-bottom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+
+/* --- Services Section (Homepage) --- */
 .services-section {
     background-color: var(--bg-primary);
 }
@@ -347,7 +371,7 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 15px 30px rgba(0,0,0,0.25);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    height: 100%; /* Ensures cards in a row have the same height */
+    height: 100%;
 }
 
 .service-card:hover {
@@ -384,7 +408,7 @@ section {
 }
 
 
-/* --- Showcase Section --- */
+/* --- Showcase Section (Homepage) --- */
 .showcase-section {
     background-color: var(--bg-primary);
 }
@@ -407,7 +431,8 @@ section {
     height: 100%;
 }
 
-/* --- Advantage Section --- */
+
+/* --- Advantage Section (Homepage) --- */
 .advantage-section {
     background-color: var(--bg-primary);
 }
@@ -444,7 +469,7 @@ section {
 }
 
 
-/* --- Contact Section --- */
+/* --- Contact Section (Homepage) --- */
 .contact-section {
     text-align: center;
 }
@@ -483,7 +508,8 @@ section {
     color: var(--accent-coral);
 }
 
-/* --- Footer --- */
+
+/* --- Footer (Shared) --- */
 .main-footer {
     background-color: #121418;
     padding: 3rem 0;
@@ -531,7 +557,7 @@ section {
     color: #6c757d;
 }
 
-/* --- Floating Action Button --- */
+/* --- Floating Action Button (Shared) --- */
 .fab {
     position: fixed;
     bottom: 20px;
@@ -557,11 +583,361 @@ section {
 }
 
 
-/* --- Media Queries (Tablet and Up) --- */
-@media (min-width: 768px) {
-    h2 {
-        font-size: 3.5rem;
+/* ======================================================== */
+/* --- NEW STYLES FOR INTERNAL PAGES (e.g., Services) --- */
+/* ======================================================== */
+
+.page-header {
+    padding: 8rem 0 3rem; /* Increased top padding to clear the fixed header */
+    text-align: center;
+    background-color: var(--bg-card);
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-detail-section {
+    padding: 4rem 0;
+}
+
+.service-detail-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.service-detail-content h2 {
+    text-align: left;
+    font-size: 2.5rem;
+}
+
+.service-detail-content h2::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+.service-detail-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.service-detail-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.service-detail-content p strong {
+    color: var(--text-primary);
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.features-list i {
+    font-size: 1.5rem;
+    color: var(--accent-coral);
+    margin-top: 2px;
+}
+
+.service-detail-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.additional-services-section {
+    background-color: var(--bg-card);
+}
+
+.process-section {
+    padding: 5rem 0;
+}
+
+.process-timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    position: relative;
+}
+
+.process-step {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.process-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.process-icon i {
+    font-size: 2.5rem;
+    background: var(--accent-blue-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.process-step h3 {
+    margin-bottom: 0.5rem;
+}
+
+.process-step p {
+    color: var(--text-secondary);
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.cta-section {
+    background-color: var(--bg-card);
+    text-align: center;
+    padding: 4rem 0;
+}
+/* --- NEW: Portfolio / Showcase Page Styles --- */
+
+.portfolio-section {
+    padding: 4rem 0;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.filter-btn:hover {
+    background-color: #313644;
+    color: var(--text-primary);
+}
+
+.filter-btn.active {
+    background: var(--accent-blue-gradient);
+    color: #FFF;
+    border-color: transparent;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.portfolio-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 15px 30px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease-in-out;
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    color: #FFF;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.portfolio-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    transform: translateY(20px);
+    transition: transform 0.4s ease-in-out;
+}
+
+.card-overlay p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transform: translateY(20px);
+    transition: transform 0.4s ease-in-out 0.1s;
+}
+
+.card-overlay .view-case-study {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-coral);
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transform: translateY(20px);
+    transition: transform 0.4s ease-in-out 0.2s;
+}
+
+.portfolio-card:hover .card-overlay h3,
+.portfolio-card:hover .card-overlay p,
+.portfolio-card:hover .card-overlay .view-case-study {
+    transform: translateY(0);
+}
+
+/* Hide/Show animation for filtering */
+.portfolio-card.hide {
+    display: none;
+}
+
+/* --- Media Query Additions for Portfolio Page --- */
+@media (min-width: 576px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media (min-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* --- NEW: Lightbox Styles --- */
+
+.portfolio-card {
+    cursor: pointer; /* Change cursor to indicate clickability */
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 29, 36, 0.95); /* Use a dark, highly opaque background */
+    z-index: 2000;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 500px; /* Adjust this to control the max width of the screenshot */
+    overflow-y: auto; /* This makes the content scrollable */
+}
+
+/* Custom scrollbar for a sleek look */
+.lightbox-content::-webkit-scrollbar {
+    width: 8px;
+}
+.lightbox-content::-webkit-scrollbar-track {
+    background: var(--bg-card);
+}
+.lightbox-content::-webkit-scrollbar-thumb {
+    background: var(--accent-coral);
+    border-radius: 4px;
+}
+
+.lightbox-content img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.lightbox-close {
+    position: fixed; /* Fixed relative to the viewport */
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: #FFF;
+    font-size: 3rem;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 2001; /* Ensure it's above the scrollable content */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--accent-coral);
+    transform: rotate(90deg);
+}
+
+
+/* ======================================================== */
+/* ---               Media Queries (Responsive)           --- */
+/* ======================================================== */
+
+@media (min-width: 768px) {
+    /* Homepage styles */
     .hero-content h1 {
         font-size: 4rem;
         margin-bottom: 0;
@@ -580,5 +956,28 @@ section {
     }
     .contact-btn {
         width: auto;
+    }
+
+    /* Services page styles */
+    .service-detail-card {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+    .service-detail-card.reverse .service-detail-content {
+        order: 2;
+    }
+    .process-timeline {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Mobile-specific hero layout */
+@media (max-width: 767px) {
+    .hero-content {
+        justify-content: space-between;
+    }
+    .hero-bottom-content {
+        margin-top: auto; 
+        margin-bottom: 2rem; 
     }
 }

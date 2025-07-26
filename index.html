@@ -14,22 +14,27 @@
     <!-- Icons (Boxicons) -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <!-- AOS Stylesheet -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon Links -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QN6GNKDE5C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-QN6GNKDE5C');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QN6GNKDE5C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QN6GNKDE5C');
+    </script>
 </head>
 <body>
 
@@ -41,8 +46,8 @@
         <a href="#contact" class="btn btn-primary menu-cta">Richiedi una Proposta Gratuita</a>
         <ul class="nav-links">
             <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#services" class="nav-link">Servizi</a></li>
-            <li><a href="#showcase" class="nav-link">Portfolio</a></li>
+            <li><a href="services.html" class="nav-link">Servizi</a></li>
+            <li><a href="showcase.html" class="nav-link">Portfolio</a></li>
             <li class="has-submenu">
                 <a href="#" class="nav-link">Approfondimenti <i class='bx bxs-chevron-down'></i></a>
                 <ul class="submenu">
@@ -52,7 +57,6 @@
             </li>
             <li><a href="#contact" class="nav-link">Contatti</a></li>
         </ul>
-        <!-- Logo in the menu with the gradient border acting as a frame -->
         <div class="menu-logo-placeholder">
             <img src="images/aw_logo.webp" alt="Logo AxiomWeb">
         </div>
@@ -75,9 +79,25 @@
         <!-- Section 1: Hero -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>NON LIMITARTI AD AVERE UN SITO WEB.<br>SCEGLI UN <span class="typed-text"></span></h1>
-                <p class="hero-subheadline">Affianchiamo le aziende del territorio per trasformare un semplice sito in un potente strumento che attira e converte clienti da Google - e non solo.</p>
-                <a href="#services" class="btn btn-primary">SCOPRI COME</a>
+                <h1>IL TUO SITO PUÒ ESSERE DI PIÙ.<br>MERITA UN <span class="typed-text"></span></h1>
+
+                <!-- Wrapper for the bottom content -->
+                <div class="hero-bottom-content">
+                    <div class="glass-panel" 
+                         data-aos="fade-right" 
+                         data-aos-duration="800"
+                         data-aos-easing="ease-in-out">
+                        
+                        <p class="hero-subheadline" 
+                           data-aos="zoom-in" 
+                           data-aos-duration="600" 
+                           data-aos-delay="500">
+                            Affianchiamo le aziende del territorio per trasformare un semplice sito in un potente strumento che attira e converte clienti da Google - e non solo.
+                        </p>
+                    </div>
+
+                    <a href="#services" class="btn btn-primary">SCOPRI COME</a>
+                </div>
             </div>
         </section>
 
@@ -167,7 +187,7 @@
                 <h2>SEI PRONTO A PARTIRE?</h2>
                 <p class="contact-subtitle">Il tuo nuovo motore di crescita è a una sola conversazione di distanza. Richiedi una proposta gratuita e senza impegno per scoprire tutto il potenziale della tua attività.</p>
                 <div class="contact-buttons">
-                    <a href="https://wa.me/391234567890" class="contact-btn">
+                    <a href="https://wa.me/391234567890" class="contact-btn" target="_blank">
                         <i class='bx bxl-whatsapp'></i>
                         <span>Chatta su WhatsApp</span>
                     </a>
@@ -175,7 +195,7 @@
                         <i class='bx bxs-paper-plane'></i>
                         <span>Invia un'Email</span>
                     </a>
-                    <a href="http://m.me/AxiomWeb" class="contact-btn">
+                    <a href="http://m.me/AxiomWeb" class="contact-btn" target="_blank">
                         <i class='bx bxl-messenger'></i>
                         <span>Scrivici su Messenger</span>
                     </a>
@@ -197,7 +217,7 @@
                 </ul>
             </div>
             <div class="footer-social">
-                <a href="https://www.facebook.com/AxiomWeb/" aria-label="Visita la nostra pagina Facebook"><i class='bx bxl-facebook-square'></i></a>
+                <a href="https://www.facebook.com/AxiomWeb/" aria-label="Visita la nostra pagina Facebook" target="_blank"><i class='bx bxl-facebook-square'></i></a>
                 <a href="#" aria-label="Visita il nostro profilo LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
                 <a href="#" aria-label="Visita la nostra pagina Instagram"><i class='bx bxl-instagram-alt'></i></a>
             </div>
@@ -210,13 +230,12 @@
         <i class='bx bxl-whatsapp'></i>
     </a>
 
-    <!-- Typed.js Library -->
+    <!-- Library Scripts -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    
-    <!-- Vanta.js and Three.js scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.rings.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <!-- Custom Script -->
     <script src="script.js" defer></script>
 

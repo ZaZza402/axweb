@@ -1,28 +1,97 @@
 document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+        once: true, // Whether animation should happen only once - while scrolling down
+        mirror: false, // Whether elements should animate out while scrolling past them
+    });
+        // --- NEW: Portfolio Filtering Logic ---
+    const filterContainer = document.querySelector('.filter-buttons');
+    if (filterContainer) {
+        const filterButtons = filterContainer.querySelectorAll('.filter-btn');
+        const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Manage active state for buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                portfolioCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    
+                    if (filterValue === 'all' || filterValue === cardCategory) {
+                        card.classList.remove('hide');
+                    } else {
+                        card.classList.add('hide');
+                    }
+                });
+            });
+        });
+    }
+        // --- NEW: Lightbox Functionality ---
+    const portfolioCardsLightbox = document.querySelectorAll('.portfolio-card');
+    const lightbox = document.getElementById('portfolio-lightbox');
+    
+    if (lightbox) {
+        const lightboxImg = lightbox.querySelector('img');
+        const lightboxCloseBtn = lightbox.querySelector('.lightbox-close');
+
+        const openLightbox = (imgSrc) => {
+            lightboxImg.setAttribute('src', imgSrc);
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        };
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        };
+
+        portfolioCardsLightbox.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                const fullImageSrc = card.getAttribute('data-full-image');
+                if (fullImageSrc) {
+                    openLightbox(fullImageSrc);
+                }
+            });
+        });
+
+        lightboxCloseBtn.addEventListener('click', closeLightbox);
+        
+        // Close lightbox if the dark overlay area is clicked
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
+
+
+
 
     // --- Vanta.js Hero Background ---
     if (window.VANTA) {
-        VANTA.NET({
-            el: "#home", // This targets your hero section with id="home"
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x8cadf2,
-            backgroundColor: 0x23153c,
-            points: 9.00,
-            maxDistance: 23.00,
-            spacing: 18.00
-        });
+    VANTA.RINGS({
+        el: "#home", // This correctly targets your hero section
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        // --- Color Scheme Integration ---
+        backgroundColor: 0x1a1d24, // This matches your --bg-primary color
+        color: 0x00c6ff          // This is the vibrant blue from your --accent-blue-gradient
+    });
     }
 
     // --- Typed.js Initialization ---
     if (document.querySelector('.typed-text')) {
         const typed = new Typed('.typed-text', {
-            strings: ["MOTORE DI CRESCITA.", "AMPLIFICATORE DEL BRAND.", "GENERATORE DI PROFITTI."],
+            strings: ["SUCCESSO.", "IMPATTO.", "RISULTATO."],
             typeSpeed: 70,
             backSpeed: 40,
             backDelay: 1500,

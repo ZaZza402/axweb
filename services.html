@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Page Title | AxiomWeb</title>
-    <meta name="description" content="A summary of this specific page's content.">
+    <!-- Page Title and Description -->
+    <title>Le Nostre Soluzioni | AxiomWeb</title>
+    <meta name="description" content="Scopri le nostre soluzioni su misura, dalle solide fondamenta digitali ai potenti motori di crescita, per portare la tua attività al livello successivo.">
 
+    <!-- Stylesheets, Fonts, Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon Links -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QN6GNKDE5C"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -27,91 +34,191 @@
 </head>
 <body>
 
+    <!-- Reusable Navigation, Overlay, and Header -->
     <nav class="off-canvas-menu">
-        <button class="menu-close" aria-label="Close navigation menu"><i class='bx bx-x'></i></button>
-        <a href="/index.html#contact" class="btn btn-primary menu-cta">GET A FREE PROPOSAL</a>
+        <button class="menu-close" aria-label="Chiudi menu di navigazione"><i class='bx bx-x'></i></button>
+        <a href="#cta" class="btn btn-primary menu-cta">Richiedi una Proposta</a>
         <ul class="nav-links">
             <li><a href="/index.html" class="nav-link">Home</a></li>
-            <li><a href="/index.html#services" class="nav-link">Services</a></li>
-            <li><a href="/index.html#showcase" class="nav-link">Showcase</a></li>
+            <li><a href="/services.html" class="nav-link">Servizi</a></li>
+            <li><a href="/showcase.html" class="nav-link">Portfolio</a></li>
             <li class="has-submenu">
-                <a href="#" class="nav-link">Insights <i class='bx bxs-chevron-down'></i></a>
+                <a href="#" class="nav-link">Approfondimenti <i class='bx bxs-chevron-down'></i></a>
                 <ul class="submenu">
-                    <li><a href="/ai-guides.html">AI Guides</a></li> <li><a href="/case-studies.html">Case Studies</a></li> </ul>
+                    <li><a href="#">Guide AI</a></li>
+                    <li><a href="#">Casi di Successo</a></li>
+                </ul>
             </li>
-            <li><a href="/index.html#contact" class="nav-link">Contact</a></li>
+            <li><a href="/index.html#contact" class="nav-link">Contatti</a></li>
         </ul>
         <div class="menu-logo-placeholder">
-            <img src="images/aw_logo.webp" alt="AxiomWeb Logo">
+            <img src="images/aw_logo.webp" alt="Logo AxiomWeb">
         </div>
     </nav>
     <div class="overlay"></div>
     <header class="main-header">
         <div class="logo">AxiomWeb</div>
-        <button class="menu-toggle" aria-label="Open navigation menu">
+        <button class="menu-toggle" aria-label="Apri menu di navigazione">
             <div class="hamburger"><span></span><span></span><span></span></div>
         </button>
     </header>
 
+    <!-- Main Content Area -->
     <main id="main-content">
 
+        <!-- Page Header -->
         <header class="page-header">
             <div class="container">
-                <h1>Your Awesome Page Title Goes Here</h1>
-                <p class="page-subtitle">A brief, engaging summary of the article.</p>
+                <h1>Le Nostre Soluzioni Digitali</h1>
+                <p class="page-subtitle">Piani flessibili e su misura, costruiti intorno alle tue esigenze per garantire la crescita e il successo della tua attività online.</p>
             </div>
         </header>
 
-        <section class="article-section">
-            <div class="container article-container">
-                
-                <h2>This is a Subheading</h2>
-                <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                
-                <img src="https://via.placeholder.com/800x400" alt="Descriptive alt text for the image" class="content-image">
-                
-                <p>Another paragraph to continue your point. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <!-- Detailed Services Section -->
+        <section class="services-detail-section">
+            <div class="container">
+                <!-- Service Detail Card 1 -->
+                <div class="service-detail-card">
+                    <div class="service-detail-content">
+                        <h2>LE FONDAMENTA DIGITALI</h2>
+                        <p><strong>Ideale per:</strong> piccole imprese, startup e liberi professionisti che necessitano di una presenza online professionale, elegante e che generi fiducia fin dal primo istante.</p>
+                        <p>Questo pacchetto è il punto di partenza essenziale. Creiamo un sito web "vetrina" che non è solo bello da vedere, ma è ottimizzato per essere veloce, sicuro e perfettamente visibile su ogni dispositivo. È il tuo biglietto da visita digitale, progettato per impressionare.</p>
+                        <h3>Cosa Include il Pacchetto:</h3>
+                        <ul class="features-list">
+                            <li><i class='bx bx-check-shield'></i> <strong>Sito Web Vetrina Professionale:</strong> Un design moderno e pulito che racconta la tua storia.</li>
+                            <li><i class='bx bx-check-shield'></i> <strong>Design Responsive e Mobile-First:</strong> Perfetta visualizzazione su smartphone, tablet e desktop.</li>
+                            <li><i class='bx bx-check-shield'></i> <strong>Ottimizzazione SEO di Base:</strong> Struttura e contenuti ottimizzati per essere trovati più facilmente su Google.</li>
+                            <li><i class='bx bx-check-shield'></i> <strong>Integrazione Contatti Rapidi:</strong> Pulsanti WhatsApp, email e social per una comunicazione immediata.</li>
+                            <li><i class='bx bx-check-shield'></i> <strong>Performance Elevate:</strong> Un sito veloce e reattivo per una migliore esperienza utente.</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/fondamenta.png" alt="Illustrazione per il pacchetto Fondamenta Digitali">
+                    </div>
+                </div>
 
-                <blockquote>
-                    "This is a blockquote. It's perfect for highlighting a key takeaway or a powerful quote from a source. It will stand out visually from the rest of the text."
-                </blockquote>
-
-                <h2>Another Subheading for Organization</h2>
-                <p>Continue with your content, explaining concepts, telling a story for a case study, or providing steps for a guide.</p>
-
+                <!-- Service Detail Card 2 -->
+                <div class="service-detail-card reverse">
+                    <div class="service-detail-content">
+                        <h2>MOTORE DI CRESCITA</h2>
+                        <p><strong>Ideale per:</strong> attività consolidate che vogliono superare la concorrenza, dominare la ricerca locale e trasformare il proprio sito in un vero e proprio strumento di acquisizione clienti.</p>
+                        <p>Andiamo oltre il design. Questo pacchetto trasforma il tuo sito in un asset strategico che lavora attivamente per te. Attraverso analisi avanzate e ottimizzazione continua, creiamo un percorso che porta i visitatori di Google a diventare tuoi clienti.</p>
+                        <h3>Cosa Include il Pacchetto:</h3>
+                        <ul class="features-list">
+                            <li><i class='bx bx-check-double'></i> <strong>Tutto del pacchetto Fondamenta, e in più:</strong></li>
+                            <li><i class='bx bx-check-double'></i> <strong>SEO Locale Avanzato:</strong> Ottimizzazione mirata per Google Maps e per le ricerche nella tua area geografica.</li>
+                            <li><i class='bx bx-check-double'></i> <strong>Analisi dei Competitor con IA:</strong> Un report dettagliato per capire i punti di forza e di debolezza dei tuoi concorrenti online.</li>
+                            <li><i class='bx bx-check-double'></i> <strong>Strategia dei Contenuti:</strong> Revisione e ottimizzazione dei tuoi testi per massimizzare la visibilità sui motori di ricerca.</li>
+                            <li><i class='bx bx-check-double'></i> <strong>Installazione di Google Analytics:</strong> Per monitorare il traffico e capire il comportamento dei tuoi visitatori.</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/crescita.png" alt="Illustrazione per il pacchetto Motore di Crescita">
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="cta-section">
+        <!-- Additional Services Section -->
+        <section class="additional-services-section">
             <div class="container">
-                <h2>Ready to Start Your Project?</h2>
-                <p class="section-intro">See how our services can transform your business's online presence.</p>
-                <a href="/index.html#services" class="btn btn-primary">View Our Services</a>
+                <h2>Servizi Inclusi e Opzioni Aggiuntive</h2>
+                <p class="section-intro">La nostra collaborazione è basata sulla trasparenza e sulla flessibilità. Ecco cosa offriamo sempre e come possiamo supportarti nel tempo.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class='bx bxs-star card-icon'></i>
+                        <h3>Sempre Inclusi nel Progetto</h3>
+                        <p>Consideriamo questi elementi fondamentali per ogni progetto di successo, senza costi aggiuntivi.</p>
+                        <ul class="service-features">
+                            <li>✅ Consulenza su Logo e Brand</li>
+                            <li>✅ Creazione Profili Social (Google, Facebook, etc.)</li>
+                            <li>✅ Integrazione WhatsApp Business</li>
+                            <li>✅ Formazione per la Gestione dei Contenuti</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <i class='bx bxs-cog card-icon'></i>
+                        <h3>Servizi di Gestione (Opzionali)</h3>
+                        <p>Se preferisci non occuparti degli aspetti tecnici, offriamo un servizio di gestione completo per la tua tranquillità.</p>
+                        <ul class="service-features">
+                            <li>✅ Hosting e Gestione Dominio Annuale</li>
+                            <li>✅ Assistenza e Modifiche su Richiesta</li>
+                            <li>✅ Piani di Manutenzione Personalizzati</li>
+                            <li>✅ Controllo Totale e Consegna dei File</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Process Section -->
+        <section class="process-section">
+            <div class="container">
+                <h2>Il Nostro Processo Collaborativo</h2>
+                <div class="process-timeline">
+                    <!-- Step 1 -->
+                    <div class="process-step">
+                        <div class="process-icon"><i class='bx bx-conversation'></i></div>
+                        <h3>1. Contatto e Consulenza</h3>
+                        <p>Tutto inizia con una conversazione. Ascoltiamo le tue idee, analizziamo le tue necessità e definiamo insieme gli obiettivi del progetto.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="process-step">
+                        <div class="process-icon"><i class='bx bx-paint-roll'></i></div>
+                        <h3>2. Proposta e Demo Iniziale</h3>
+                        <p>Sulla base della nostra chiacchierata, prepariamo una proposta dettagliata e una prima demo visiva per darti un'idea concreta del risultato finale.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="process-step">
+                        <div class="process-icon"><i class='bx bx-wrench'></i></div>
+                        <h3>3. Sviluppo e Revisione</h3>
+                        <p>È la fase di costruzione vera e propria. Lavoriamo a stretto contatto con te, con cicli di revisione per implementare i tuoi feedback.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="process-step">
+                        <div class="process-icon"><i class='bx bx-rocket'></i></div>
+                        <h3>4. Lancio e Consegna</h3>
+                        <p>Una volta approvato il progetto finale, mettiamo il sito online e ti forniamo tutti gli accessi e le istruzioni per una gestione autonoma.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="cta" class="cta-section">
+            <div class="container">
+                <h2>Hai un Progetto in Mente?</h2>
+                <p class="section-intro">Non vediamo l'ora di ascoltare le tue idee. Contattaci per una chiacchierata senza impegno e scopri come possiamo aiutarti a crescere.</p>
+                <a href="/index.html#contact" class="btn btn-primary">Richiedi la Tua Proposta Gratuita</a>
             </div>
         </section>
 
     </main>
+
+    <!-- Reusable Footer and Scripts -->
     <footer class="main-footer">
         <div class="container">
-            <p class="footer-quote"><em>"Design is not just what it looks like and feels like. Design is how it works."</em></p>
+            <p class="footer-quote"><em>"Il design non è solo come appare e come si sente. Il design è come funziona."</em></p>
             <div class="footer-links">
-                <h4>Quick Links</h4>
+                <h4>Link Veloci</h4>
                 <ul>
                     <li><a href="/index.html">Home</a></li>
-                    <li><a href="/index.html#services">Services</a></li>
-                    <li><a href="/index.html#contact">Contact</a></li>
+                    <li><a href="/services.html">Servizi</a></li>
+                    <li><a href="/index.html#contact">Contatti</a></li>
                 </ul>
             </div>
             <div class="footer-social">
-                <a href="#" aria-label="Visit our Facebook page"><i class='bx bxl-facebook-square'></i></a>
-                <a href="#" aria-label="Visit our LinkedIn profile"><i class='bx bxl-linkedin-square'></i></a>
-                <a href="#" aria-label="Visit our Instagram page"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://www.facebook.com/AxiomWeb/" aria-label="Visita la nostra pagina Facebook" target="_blank"><i class='bx bxl-facebook-square'></i></a>
+                <a href="#" aria-label="Visita il nostro profilo LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="#" aria-label="Visita la nostra pagina Instagram"><i class='bx bxl-instagram-alt'></i></a>
             </div>
             <div class="footer-copyright"></div>
         </div>
     </footer>
-    <a href="#" class="fab" aria-label="Chat on WhatsApp"><i class='bx bxl-whatsapp'></i></a>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <a href="https://wa.me/391234567890" class="fab" aria-label="Chatta su WhatsApp" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js" defer></script>
 
 </body>
