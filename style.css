@@ -306,7 +306,21 @@ section {
     font-size: 1.1rem;
     max-width: 550px;
     margin: 1.5rem auto 2.5rem;
-    color: var(--text-secondary);
+    color: #e7ecf0;
+}
+/* --- NEW: Hero Overlay for Text Readability --- */
+.hero::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* The overlay color and transparency. Adjust the last value (0.5) to make it darker or lighter. */
+    background-color: rgba(0, 0, 0, 0.5); 
+    
+    z-index: 0; /* This places the overlay above the Vanta background but below your text content. */
 }
 
 /* --- Services Section --- */
